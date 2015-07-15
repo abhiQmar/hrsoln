@@ -1,5 +1,22 @@
 <HTML>
   <BODY>
     This is the index of employees
+    <br>
+    List of employees:
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Blood Group</th>
+      </tr>
+      <% @employees.each do |emp| %>
+      <tr>
+        <th><%= emp.name %></th>
+        <th><%= emp.dept %></th>
+        <th><%= emp.blood_group %></th>
+        <th><%= link_to "View Profile", emp %></th>
+      </tr>
+      <% end %>
+    </table>
   </BODY>
 </HTML>
