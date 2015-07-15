@@ -4,6 +4,6 @@ class EmployeesController < ApplicationController
   end
   def show
     @employee = Employee.find(params[:id])
-    render inline: "<%= @employee.name %>"
+    # render inline: "<%= @employee.name %>"
   end
 end
