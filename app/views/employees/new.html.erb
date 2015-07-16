@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <%= form_for :employee, url: employees_path do |emp| %>
+    <p>
+      <%= emp.label :name %>
+      <%= emp.text_field :name %>
+    </p>
+    <p>
+      <%= emp.label :dept %>
+      <%= emp.text_field :dept %>
+    </p>
+    <p>
+      <%= submit_tag('Save') %>
+    </p>
+    <% end %>
+  </body>
+</html>
