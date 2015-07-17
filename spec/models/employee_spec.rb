@@ -17,8 +17,4 @@ describe Employee do
     emp = Employee.new
     emp.name.should == 'Abhi'
   end
-  # it 'should be in the dept it is assigned to' do
-  #   employee = Employee.new
-  #   employee.should be_in_role('assigned dept')
-  # end
 end
