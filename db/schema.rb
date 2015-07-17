@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714131431) do
+ActiveRecord::Schema.define(version: 20150717080149) do
 
   create_table "employees", force: :cascade do |t|
-    t.string "name",        limit: 255
-    t.string "dept",        limit: 255
-    t.date   "dob"
-    t.text   "address",     limit: 65535
-    t.date   "doj"
-    t.string "blood_group", limit: 255
+    t.string  "name",         limit: 255
+    t.string  "dept",         limit: 255
+    t.date    "dob"
+    t.text    "address",      limit: 65535
+    t.date    "doj"
+    t.string  "blood_group",  limit: 255
+    t.string  "designation",  limit: 255
+    t.integer "total_leaves", limit: 1
+    t.integer "leaves_left",  limit: 1
   end
 
 end
