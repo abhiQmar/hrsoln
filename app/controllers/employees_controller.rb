@@ -4,6 +4,10 @@ class EmployeesController < ApplicationController
   end
   def show
     @employee = Employee.find(params[:id])
+    leaves = Leave.where employee_id: params[:id]
+    sum = 0
+    leaves.to_a.each {|l| sum+=l.days}
+    @leaves_taken = sum
     # render inline: "<%= @employee.name %>"
   end
   def create

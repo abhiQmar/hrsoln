@@ -7,7 +7,8 @@
     <b>Address:</b> <%= @employee.address %> <br>
     <b>Blood Group:</b> <%= @employee.blood_group %> <br>
     <b>Total Leaves:</b> <%= @employee.total_leaves %> <br>
-    <b>Leaves taken:</b> <%= @employee.leaves_left %> <br>
+    <b>Leaves taken:</b> <%= @leaves_taken %> <br>
+    <b>Leaves left:</b> <%= @employee.total_leaves - @leaves_taken %> <br>
     <%= link_to 'Add a Leave',"#{params[:id]}/leaves/new" %>
   </body>
 </html>
