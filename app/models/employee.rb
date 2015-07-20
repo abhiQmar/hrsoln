@@ -1,6 +1,6 @@
 class Employee < ActiveRecord::Base
-  has_many :leaves, inverse_of: :employee, dependent: :destroy
   validates :name, presence: true
+  has_many :leaves, inverse_of: :employee, dependent: :destroy
   def new
   end
 end
