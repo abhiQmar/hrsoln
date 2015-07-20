@@ -8,5 +8,6 @@
     <b>Blood Group:</b> <%= @employee.blood_group %> <br>
     <b>Total Leaves:</b> <%= @employee.total_leaves %> <br>
     <b>Leaves taken:</b> <%= @employee.leaves_left %> <br>
+    <%= link_to 'Add a Leave',"#{params[:id]}/leaves/new" %>
   </body>
 </html>

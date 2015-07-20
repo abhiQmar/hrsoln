@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <%= form_for :leave do |l| %>
+    <p>
+      <%= l.label :no_of_days_leaves_taken %>
+      <%= l.text_field :days %>
+    </p>
+    <p>
+      <%= l.label :title %>
+      <%= l.text_field :title %>
+    </p>
+    <p>
+      <%= l.label :description %>
+      <%= l.text_field :description %>
+    </p>
+    <p>
+      <%= submit_tag('Save') %>
+    </p>
+    <% end %>
+  <body>
+<html>
