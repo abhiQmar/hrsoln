@@ -9,6 +9,6 @@ class LeavesController < ApplicationController
   end
 private
   def leave_params
-    params.require(:leave).permit(:days,:title,:description)
+    params.require(:leave).permit(:start_date,:end_date,:title,:description)
   end
 end

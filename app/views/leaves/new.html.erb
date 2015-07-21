@@ -2,8 +2,12 @@
   <body>
     <%= form_for :leave do |l| %>
     <p>
-      <%= l.label :no_of_days_leaves_taken %>
-      <%= l.text_field :days %>
+      <%= l.label :start_date %>
+      <%= l.text_field :start_date %>
+    </p>
+    <p>
+      <%= l.label :end_date %>
+      <%= l.text_field :end_date %>
     </p>
     <p>
       <%= l.label :title %>

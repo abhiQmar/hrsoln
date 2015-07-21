@@ -6,7 +6,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
     leaves = Leave.where employee_id: params[:id]
     sum = 0
-    leaves.to_a.each {|l| sum+=l.days}
+    leaves.to_a.each {|l| sum += (l.end_date - l.start_date).to_i}
     @leaves_taken = sum
     # render inline: "<%= @employee.name %>"
   end
