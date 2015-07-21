@@ -15,7 +15,11 @@ class EmployeesController < ApplicationController
     emp.save
     redirect_to '/employees'
   end
-
+  def destroy
+    employee = Employee.find(params[:id])
+    employee.destroy!
+    redirect_to employees_path
+  end
 private
   def employee_params
     params.require(:employee).permit(:name, :dept, :designation, :doj, :total_leaves, :leaves_left, :address, :blood_group, :dob)
