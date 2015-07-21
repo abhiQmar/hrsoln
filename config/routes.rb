@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get '/employees/:id/leaves/new', to: 'leaves#new'
   post '/employees/:id/leaves/new', to: 'leaves#create'
+  get '/employees/:id/leaves/show', to: 'leaves#show'
    # You can have the root of your site routed with "root"
   root 'employees#index'
 

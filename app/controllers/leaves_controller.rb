@@ -7,6 +7,11 @@ class LeavesController < ApplicationController
     leave.save
     render inline: "<meta HTTP-EQUIV='REFRESH' content='2; url=/employees'>Leave has been added"
   end
+
+  def show
+    @leaves = Leave.where employee_id: params[:id]
+  end
+
 private
   def leave_params
     params.require(:leave).permit(:start_date,:end_date,:title,:description)
