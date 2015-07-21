@@ -3,6 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
+           <h3>Profile:</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
           <table class="table table-hover">
             <tr>
               <td><b>Name:</b></td>
@@ -32,12 +37,18 @@
             <tr>
               <td><b>Leaves left:</b></td>
               <td> <%= @employee.total_leaves - @leaves_taken unless @employee.total_leaves.nil?  %>  </td>
-            <%= link_to 'Add a Leave',"#{params[:id]}/leaves/new" %>
-
-            <%= link_to "Show #{@employee.name}'s Leaves", "#{params[:id]}/leaves/show" %>
+            </tr>
           </table>
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-4">
+          <%= button_to 'Add a Leave',"#{params[:id]}/leaves/new", :method => :get, :class => "btn btn-primary" %>
+        </div>
+        <div class="col-sm-4">
+          <%= button_to "Show #{@employee.name}'s Leaves", "#{params[:id]}/leaves/show", :method => :get, :class => "btn btn-info" %>
+        </div>
+      </div> <!-- Row ends -->
+    </div> <!-- Container ends -->
   </body>
 </html>

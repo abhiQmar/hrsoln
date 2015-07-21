@@ -1,5 +1,6 @@
 <hmtl>
   <body>
+  <div class="container">
     <% @leaves.each do |l| %>
       Title: <%= l.title %><br>
       Start Date:  <%= l.start_date %><br>
@@ -7,5 +8,6 @@
       Description: <%= l.description %> <br>
       ----------------------------------------<br>
     <% end %>
+  </div>
   </body>
 </html>
