@@ -1,4 +1,14 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $( "#leave_start_date" ).datepicker({dateFormat: 'dd-mm-yy' });
+        $( "#leave_end_date" ).datepicker({dateFormat: 'dd-mm-yy' });
+      });
+    </script>
+  </head>
   <body>
     <%= form_for :leave do |l| %>
     <p>
