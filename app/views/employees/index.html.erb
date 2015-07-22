@@ -23,7 +23,7 @@
         <th><%= emp.dept %></th>
         <th><%= emp.blood_group %></th>
         <th><%= link_to "View Profile", emp %></th>
-        <th><%= button_to "Delete Entry", emp, method: :delete,data: {confirm: 'Are you sure?', class: "btn btn-danger"} %> </th>
+        <th><%= button_to "Delete Entry", emp, method: :delete,data: {confirm: 'Are you sure?'}, class: "btn-md btn-danger" %> </th>
       </tr>
       <% end %>
     </table>
