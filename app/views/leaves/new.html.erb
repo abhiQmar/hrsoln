@@ -10,26 +10,41 @@
     </script>
   </head>
   <body>
-    <%= form_for :leave do |l| %>
-    <p>
-      <%= l.label :start_date %>
-      <%= l.text_field :start_date %>
-    </p>
-    <p>
-      <%= l.label :end_date %>
-      <%= l.text_field :end_date %>
-    </p>
-    <p>
-      <%= l.label :title %>
-      <%= l.text_field :title %>
-    </p>
-    <p>
-      <%= l.label :description %>
-      <%= l.text_field :description %>
-    </p>
-    <p>
-      <%= submit_tag('Save') %>
-    </p>
-    <% end %>
-  <body>
-<html>
+  <div class="container">
+    <div class="jumbotron">
+      <h4>Enter the details of the Leave:</h4>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <%= form_for :leave, :html =>{class: "form-horizontal"} do |l| %>
+        <div class="form-group">
+          <%= l.label :start_date, class: "control-label col-sm-2"  %>
+          <div class="col-sm-4">
+            <%= l.text_field :start_date, class: "form-control", placeholder: "Enter Start date"  %>
+          </div>
+          <%= l.label :end_date, class: "control-label col-sm-2"  %>
+          <div class="col-sm-4">
+            <%= l.text_field :end_date, class: "form-control", placeholder: "Enter End Date"  %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= l.label :title, class: "control-label col-sm-2"  %>
+          <div class="col-sm-10">
+            <%= l.text_field :title, class: "form-control", placeholder: "Enter Title"  %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= l.label :description, class: "control-label col-sm-2"  %>
+          <div class="col-sm-10">
+            <%= l.text_area :description, class: "form-control", placeholder: "Enter a Short Description"  %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= submit_tag 'Save', :class => 'col-sm-3 btn btn-success' %>
+        </div>
+        <% end %>
+      </div><!--column ends-->
+    </div>  <!--row ends-->
+  </div>    <!--container ends-->
+  </body>
+</html>

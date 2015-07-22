@@ -1,16 +1,54 @@
 <html>
   <body>
-    <b>Name:</b> <%= @employee.name%> <br>
-    <b>Dept:</b> <%= @employee.dept%> <br>
-    <b>Designation:</b> <%= @employee.designation %> <br>
-    <b>Date of Joining:</b> <%= @employee.doj %> <br>
-    <b>Address:</b> <%= @employee.address %> <br>
-    <b>Blood Group:</b> <%= @employee.blood_group %> <br>
-    <b>Total Leaves:</b> <%= @employee.total_leaves %> <br>
-    <b>Leaves taken:</b> <%= @leaves_taken %> <br>
-    <b>Leaves left:</b> <%= @employee.total_leaves - @leaves_taken unless @employee.total_leaves.nil?  %> <br>
-    <%= link_to 'Add a Leave',"#{params[:id]}/leaves/new" %>
-    <br>
-    <%= link_to "Show #{@employee.name}'s Leaves", "#{params[:id]}/leaves/show" %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+           <h3>Profile:</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <table class="table table-hover">
+            <tr>
+              <td><b>Name:</b></td>
+              <td><%= @employee.name%></td>
+            </tr>
+            <tr>
+              <td><b>Dept:</b> </td>
+              <td><%= @employee.dept%>  </td>
+            <tr>
+              <td><b>Designation:</b> </td>
+              <td><%= @employee.designation %>  </td>
+            <tr>
+              <td><b>Date of Joining:</b> </td>
+              <td><%= @employee.doj %>  </td>
+            <tr>
+              <td><b>Address:</b> </td>
+              <td><%= @employee.address %>  </td>
+            <tr>
+              <td><b>Blood Group:</b></td>
+              <td> <%= @employee.blood_group %>  </td>
+            <tr>
+              <td><b>Total Leaves:</b></td>
+              <td> <%= @employee.total_leaves %>  </td>
+            <tr>
+              <td><b>Leaves taken:</b></td>
+              <td> <%= @leaves_taken %>  </td>
+            <tr>
+              <td><b>Leaves left:</b></td>
+              <td> <%= @employee.total_leaves - @leaves_taken unless @employee.total_leaves.nil?  %>  </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-4">
+          <%= button_to 'Add a Leave',"#{params[:id]}/leaves/new", :method => :get, :class => "btn btn-primary" %>
+        </div>
+        <div class="col-sm-4">
+          <%= button_to "Show #{@employee.name}'s Leaves", "#{params[:id]}/leaves/show", :method => :get, :class => "btn btn-info" %>
+        </div>
+      </div> <!-- Row ends -->
+    </div> <!-- Container ends -->
   </body>
 </html>
