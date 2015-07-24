@@ -9,7 +9,9 @@ class LeavesController < ApplicationController
   end
 
   def show
-    @leaves = Leave.where employee_id: params[:id]
+    emp = Employee.find(params[:id])
+    @leaves = emp.leaves
+    # @leaves = Leave.where employee_id: params[:id]
   end
 
 private
