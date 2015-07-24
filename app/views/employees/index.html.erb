@@ -1,4 +1,27 @@
 <HTML>
+  <head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $( "#to_date" ).datepicker({dateFormat: 'dd-mm-yy' });
+        $( "#from_date" ).datepicker({dateFormat: 'dd-mm-yy' });
+      });
+      // $(document).ready(function(){
+      //   $('#ajaxForm').on('ajax:success',function(e, data, status, xhr){
+      //     alert('asd');
+      //     $('#to_date').text('Done.');
+      //   }).on('ajax:error',function(e, xhr, status, error){
+      //     $('#to_date').text('Failed.');
+      //   });
+      // });
+      // $(document).ready(function(){
+      //   $(document).on('ajax:success', 'a[data-remote].watching', function(e, data, status, xhr){
+      //     alert('ad');
+      //   });
+      // });
+    </script>
+  </head>
   <BODY>
     <div class='container'>
     <div class='row'>
@@ -30,6 +53,23 @@
     <h1><%= button_to 'Add new Employee', new_employee_path, :method => :get , :class => "btn btn-primary" %></h1>
     </div>
     </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h4>Who all are absent?<h4><br>
+          <%= form_tag("/employees/search", id: "ajaxForm", class: "form-inline") do %>
+            <div class="form-group">
+              <label for="from_date">From Date: </label>
+              <%= text_field_tag (:from_date) %>
+            </div>
+            <div class="form-group">
+              <label for="to_date">To Date: </label>
+              <%= text_field_tag (:to_date) %>
+            </div>
+            <%= submit_tag 'Search', id: "mybutton" %>
+          <% end %>
+          <br><br><br><br>
+        </div>
+      </div>
     </div>
   </BODY>
 </HTML>

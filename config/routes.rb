@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/employees/:id/leaves/new', to: 'leaves#new'
   post '/employees/:id/leaves/new', to: 'leaves#create'
   get '/employees/:id/leaves/show', to: 'leaves#show'
+  post 'employees/search', to: 'employees#search'
    # You can have the root of your site routed with "root"
   root 'employees#index'
 
